@@ -45,6 +45,10 @@
       "rev": "7d324792b7943e4aa16ad007212e6acc6f9fe335",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
     },
+    "todo-comments.nvim": {
+      "rev": "31e3c38ce9b29781e4422fc0322eb0a21f4e8668",
+      "src": "https://github.com/folke/todo-comments.nvim"
+    },
     "tree-sitter-manager.nvim": {
       "rev": "30b6dd8d14bf4a3870dc44ccefdc228a9a760e71",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"

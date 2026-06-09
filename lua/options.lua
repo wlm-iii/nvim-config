@@ -38,10 +38,12 @@ vim.o.cmdheight = 0
 vim.opt.termguicolors = true
 vim.o.winborder = "rounded"
 
+vim.o.mouse = ""
+
 vim.o.cursorline = true
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
-    callback= function()
+    callback = function()
         vim.hl.on_yank()
     end,
 })

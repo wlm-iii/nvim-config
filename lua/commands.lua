@@ -14,7 +14,7 @@ vim.api.nvim_create_user_command("PackUpdate", function(opts)
         local plugins = vim.split(opts.args, "%s+", { triempty = true })
         -- update only specified plugins
         vim.pack.update(plugins)
-    else 
+    else
         -- update all
         vim.pack.update()
     end

@@ -28,7 +28,19 @@ vim.keymap.set("n", "<leader>tH", "<cmd>-tabmove<cr>", { desc = "Move tab left" 
 vim.keymap.set("n", "<leader>tL", "<cmd>+tabmove<cr>", { desc = "Move tab right" })
 
 for i = 1, 9 do
-  vim.keymap.set("n", "<leader>t" .. i, i .. "gt", {
-    desc = "Go to tab " .. i,
-  })
+    vim.keymap.set("n", "<leader>t" .. i, i .. "gt", {
+        desc = "Go to tab " .. i,
+    })
 end
+
+vim.keymap.set("n", "<leader>m", function()
+        if vim.o.mouse == "" then
+            vim.opt.mouse = "a"
+            vim.notify("Mouse enabled")
+        else
+            vim.opt.mouse = ""
+            vim.notify("Mouse disabled")
+        end
+    end,
+    { desc = "Toggle mouse", }
+)

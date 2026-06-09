@@ -24,20 +24,20 @@ require("tree-sitter-manager").setup({
 })
 
 local treesitter_filetypes = {
-  "lua",
-  "vim",
-  "vimdoc",
-  "markdown",
-  "c",
-  "cpp",
-  "python",
-  "bash",
-  "sh",
-  "json",
-  "toml",
-  "nix",
-  "typst",
-  "rust",
+    "lua",
+    "vim",
+    "vimdoc",
+    "markdown",
+    "c",
+    "cpp",
+    "python",
+    "bash",
+    "sh",
+    "json",
+    "toml",
+    "nix",
+    "typst",
+    "rust",
 }
 
 vim.treesitter.language.register("bash", "sh")

@@ -1,5 +1,4 @@
 vim.pack.add({
-    { src = "https://github.com/ellisonleao/gruvbox.nvim" },
     { src = "https://github.com/nvim-mini/mini.nvim" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/saghen/blink.cmp",                 version = "v1.10.2" },
@@ -10,10 +9,7 @@ vim.pack.add({
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
-})
-
---- gruvbox ---
-require("gruvbox").setup({
+    { src = "https://github.com/folke/todo-comments.nvim" },
 })
 
 vim.o.background = "dark"
@@ -64,7 +60,7 @@ require("oil").setup({
         ["<C-s>"] = { "actions.select", opts = { vertical = true } },
         ["<C-h>"] = { "actions.select", opts = { horizontal = true } },
         ["<C-t>"] = { "actions.select", opts = { tab = true } },
-        ["<C-c>"] = { "actions.close", mode = "n" },
+        ["<Esc>"] = { "actions.close", mode = "n" },
     },
 
     float = {
@@ -151,9 +147,9 @@ require("which-key").add({
     { "<leader>t", group = "Tabs" },
 })
 
-for i = 1,9 do
+for i = 1, 9 do
     require("which-key").add({
-        {"<leader>t" .. i, hidden = true}
+        { "<leader>t" .. i, hidden = true }
     })
 end
 --- gitsigns ---
@@ -263,8 +259,8 @@ vim.keymap.set('n', '<leader>/h', require("telescope.builtin").help_tags, { desc
 vim.keymap.set('n', '<leader>/r', require("telescope.builtin").oldfiles, { desc = 'Recent files' })
 vim.keymap.set('n', '<leader>//', function()
     require("telescope.builtin").current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-      winblend = 10,
-      previewer = false,
+        winblend = 10,
+        previewer = false,
     })
 end, { desc = 'Fuzzily search in current buffer' })
 
@@ -278,3 +274,7 @@ require("typst-preview").setup({
     }
 })
 
+--- todo-comments ---
+require("todo-comments").setup()
+
+vim.keymap.set('n', '<leader>/t', '<cmd>:TodoTelescope<CR>', { desc = 'Find Todos' })
