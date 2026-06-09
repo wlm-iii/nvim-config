@@ -9,6 +9,7 @@ vim.pack.add({
     { src = "https://github.com/folke/which-key.nvim" },
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
+    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
 })
 
 --- gruvbox ---
@@ -71,10 +72,6 @@ require("oil").setup({
         max_width = 0,
         max_height = 0,
         border = "rounded",
-        -- win_options = {
-        --   winblend = 0,
-        --   winhighlight = "NormalFloat:Normal,FloatBorder:Normal",
-        -- },
         get_win_title = nil,
         preview_split = "auto",
         override = function(conf)
@@ -149,6 +146,16 @@ require("which-key").setup({
     },
 })
 
+require("which-key").add({
+    { "<leader>/", group = "Telescope" },
+    { "<leader>t", group = "Tabs" },
+})
+
+for i = 1,9 do
+    require("which-key").add({
+        {"<leader>t" .. i, hidden = true}
+    })
+end
 --- gitsigns ---
 require("gitsigns").setup({
     signs = {
@@ -254,6 +261,12 @@ vim.keymap.set('n', '<leader>/g', require("telescope.builtin").live_grep, { desc
 vim.keymap.set('n', '<leader>/b', require("telescope.builtin").buffers, { desc = 'Find buffers' })
 vim.keymap.set('n', '<leader>/h', require("telescope.builtin").help_tags, { desc = 'Help tags' })
 vim.keymap.set('n', '<leader>/r', require("telescope.builtin").oldfiles, { desc = 'Recent files' })
+vim.keymap.set('n', '<leader>//', function()
+    require("telescope.builtin").current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+      winblend = 10,
+      previewer = false,
+    })
+end, { desc = 'Fuzzily search in current buffer' })
 
 --- typst preview ---
 require("typst-preview").setup({
@@ -264,3 +277,4 @@ require("typst-preview").setup({
         webscoat = vim.fn.exepath("websocat"),
     }
 })
+

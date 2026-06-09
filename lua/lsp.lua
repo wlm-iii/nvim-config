@@ -1,6 +1,6 @@
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = "Go to definition" })
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = "Format local buffer" })
-vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = "Show line diagnostics" })
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = "Show line diagnostics" })
 
 vim.diagnostic.config({
     virtual_text = true,
