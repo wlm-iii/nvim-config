@@ -4,7 +4,15 @@ vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, { desc = "Show line
 
 vim.diagnostic.config({
     virtual_text = true,
-    update_on_insert = true,
+    update_in_insert = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+            [vim.diagnostic.severity.HINT] = " ",
+        },
+    },
 })
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
