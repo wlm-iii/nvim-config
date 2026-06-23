@@ -22,15 +22,16 @@ vim.lsp.config("*", { capabilities = capabilities })
 vim.lsp.config("lua_ls", {
     settings = {
         Lua = {
-            diagnostics = { globals = { "vim" } }
+            diagnostics = { globals = { "vim", "hl" } }
         }
     }
 })
 
 vim.lsp.enable({
     "lua_ls",
-    "nil",
+    "nil_ls",
     "pyright",
     "clangd",
     "tinymist",
+    "rust_analyzer",
 })

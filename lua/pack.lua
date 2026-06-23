@@ -10,10 +10,8 @@ vim.pack.add({
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/folke/todo-comments.nvim" },
+    { src = "https://github.com/Bekaboo/deadcolumn.nvim" },
 })
-
-vim.o.background = "dark"
-vim.cmd.colorscheme("gruvbox")
 
 --- mini icons ---
 require("mini.icons").setup({
@@ -111,7 +109,7 @@ require("blink.cmp").setup({
     },
 
     fuzzy = {
-        implementation = "prefer_rust",
+        implementation = "prefer_rust_with_warning",
     },
 
     signature = {
@@ -145,11 +143,12 @@ require("which-key").setup({
 require("which-key").add({
     { "<leader>/", group = "Telescope" },
     { "<leader>t", group = "Tabs" },
+    { "<leader>p", group = "Previews" },
 })
 
 for i = 1, 9 do
     require("which-key").add({
-        { "<leader>t" .. i, hidden = true }
+        { "<leader>" .. i, hidden = true }
     })
 end
 --- gitsigns ---
@@ -274,7 +273,11 @@ require("typst-preview").setup({
     }
 })
 
+vim.keymap.set('n', '<leader>pt', '<cmd>TypstPreviewToggle<CR>', { desc = 'Preview Typst' })
+
 --- todo-comments ---
 require("todo-comments").setup()
 
 vim.keymap.set('n', '<leader>/t', '<cmd>:TodoTelescope<CR>', { desc = 'Find Todos' })
+
+--- deadcolumn ---

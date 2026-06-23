@@ -32,7 +32,15 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.isfname:append("@-@")
 vim.opt.scrolloff = 10
 
-vim.opt.colorcolumn = "0"
+vim.opt.colorcolumn = "100"
+-- For different maximum line lengths
+vim.api.nvim_create_augroup("setColorColumn", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    group = "setColorColumn",
+    pattern = { "cpp", "c" },
+    command = "setlocal colorcolumn=80"
+})
+
 vim.opt.signcolumn = "yes"
 vim.o.cmdheight = 0
 vim.opt.termguicolors = true
