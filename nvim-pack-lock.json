@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "actually-doom.nvim": {
+      "rev": "4b56fc0b82426ede99c395e04cbed9e98fa1f52e",
+      "src": "https://github.com/seandewar/actually-doom.nvim"
+    },
     "blink.cmp": {
       "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",

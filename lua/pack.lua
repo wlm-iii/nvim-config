@@ -11,6 +11,7 @@ vim.pack.add({
     { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     { src = "https://github.com/folke/todo-comments.nvim" },
     { src = "https://github.com/Bekaboo/deadcolumn.nvim" },
+    { src = "https://github.com/seandewar/actually-doom.nvim" },
 })
 
 --- mini icons ---
@@ -281,3 +282,6 @@ require("todo-comments").setup()
 vim.keymap.set('n', '<leader>/t', '<cmd>:TodoTelescope<CR>', { desc = 'Find Todos' })
 
 --- deadcolumn ---
+
+--- actually-doom ---
+require("actually-doom").setup()
