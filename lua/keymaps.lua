@@ -14,6 +14,10 @@ vim.keymap.set("n", "<leader>q", ":quit<CR>", {
     desc = "Quit buffer"
 })
 
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', {
+    desc = 'Exit terminal mode'
+})
+
 vim.keymap.set("n", "<leader>u", function()
     vim.cmd.packadd("nvim.undotree")
     require("undotree").open()

@@ -7,8 +7,14 @@ vim.opt.relativenumber = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.api.nvim_create_augroup("setShiftWidth", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    group = "setShiftWidth",
+    pattern = { "nix" },
+    command = "setlocal shiftwidth=2"
+})
 
 vim.opt.wrap = false
 vim.opt.smartindent = true
