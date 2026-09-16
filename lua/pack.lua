@@ -4,7 +4,7 @@ vim.pack.add({
     { src = "https://github.com/saghen/blink.cmp",                 version = "v1.10.2" },
     { src = "https://github.com/romus204/tree-sitter-manager.nvim" },
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/chomosuke/typst-preview.nvim",     version = "v1.*" },
+    { src = "https://github.com/chomosuke/typst-preview.nvim",     version = vim.version.range("1") },
     { src = "https://github.com/folke/which-key.nvim" },
     { src = "https://github.com/lewis6991/gitsigns.nvim" },
     { src = "https://github.com/nvim-lualine/lualine.nvim" },
@@ -270,7 +270,7 @@ require("typst-preview").setup({
 
     dependencies_bin = {
         tinymist = vim.fn.exepath("tinymist"),
-        webscoat = vim.fn.exepath("websocat"),
+        websocat = vim.fn.exepath("websocat"),
     }
 })
 
